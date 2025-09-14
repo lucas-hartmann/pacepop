@@ -1,0 +1,53 @@
+# Node / package managers
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js
+.next/
+.next-static/
+out/
+dist/
+build/
+.next-standalone/
+
+# Testing / coverage
+coverage/
+playwright-report/
+test-results/
+
+# Env & local config
+.env
+.env.local
+.env.*.local
+.envrc
+!.env.example
+.env.example
+
+# Editors & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+.eslintcache
+.stylelintcache
+
+# Tool caches
+.turbo/
+.cache/
+.parcel-cache/
+
+# Hosting / CI
+.vercel/
+.netlify/
+
+# Supabase (keep config & migrations, ignore temp state)
+supabase/.temp
+supabase/.branches
+
+# Misc
+*.log

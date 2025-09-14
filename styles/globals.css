@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables */
+:root {
+  --accent-from: #F7B500;
+  --accent-to: #FF7A00;
+  --accent: 34 100% 51%; /* hsl(34,100%,51%) ~ #FF8A00 */
+
+  --bg: 0 0% 100%;
+  --fg: 222 47% 11%;
+  --muted: 210 16% 92%;
+  --muted-fg: 220 8% 35%;
+  --border: 220 13% 90%;
+}
+
+.dark {
+  --bg: 222 47% 10%;
+  --fg: 210 40% 98%;
+  --muted: 222 30% 18%;
+  --muted-fg: 220 10% 70%;
+  --border: 220 17% 26%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-white dark:bg-[hsl(var(--bg))] text-[hsl(var(--fg))] antialiased;
+}
+
+/* Reusable focus ring */
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.35);
+}
+
+/* Container */
+.container-px {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Button base */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--accent))] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[hsl(var(--bg))];
+}
+
+.btn-primary {
+  @apply bg-accent-gradient text-white shadow hover:opacity-95 active:opacity-90;
+}
+
+.btn-outline {
+  @apply border border-[hsl(var(--border))] bg-white/60 dark:bg-white/5 text-[hsl(var(--fg))] hover:bg-white/80 dark:hover:bg-white/10;
+}
+
+/* Input */
+.input {
+  @apply w-full rounded-lg border border-[hsl(var(--border))] bg-white/70 dark:bg-white/5 px-4 py-3 text-[hsl(var(--fg))] placeholder-[hsl(var(--muted-fg))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--accent))] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[hsl(var(--bg))];
+}
+
+/* Card */
+.card {
+  @apply rounded-xl border border-[hsl(var(--border))] bg-white/70 dark:bg-white/5 backdrop-blur-sm shadow-sm;
+}
+
