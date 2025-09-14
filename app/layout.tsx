@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'PacePop — Focused, Minimalist Launch Page',
+  title: 'PacePop',
   description: 'Join the PacePop waitlist to get early access.',
-  metadataBase: new URL('https://pacepop.example'),
+  metadataBase: new URL('https://pacepop.run'),
 }
 
 function ThemeScript() {

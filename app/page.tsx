@@ -4,8 +4,11 @@ import { FeatureCard } from '@/components/FeatureCard'
 import { FAQ } from '@/components/FAQ'
 import { SignupForm } from '@/components/SignupForm'
 import { motion } from 'framer-motion'
-import { Bolt, GaugeCircle, Layout, Shield } from 'lucide-react'
+import { Zap, Droplet, Candy, Leaf } from "lucide-react";
+
+
 import Link from 'next/link'
+import AnimatedPillsSection from '@/components/AnimatedPillSection'
 
 export default function Page() {
   return (
@@ -13,47 +16,80 @@ export default function Page() {
       <Navbar />
 
       {/* Hero */}
-      <section className="container-px mx-auto max-w-6xl pt-16 sm:pt-20">
+      <section className="container-px mx-auto max-w-6xl pt-8 sm:pt-16">
         <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-2 items-center">
           <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
             <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">
-              Launch faster with clarity.
+              PacePop - The new generation of fueling.
             </h1>
             <p className="mt-4 text-[hsl(var(--muted-fg))] text-lg">
-              PacePop is a minimalist launch page that helps you share your vision and collect interest—without the clutter.
-            </p>
+              No more sticky gels. PacePop dissolves in your mouth in 60s <br></br> 5g carbs + electrolytes, clean fuel that goes down easy.
+              </p>
             <div className="mt-6 flex items-center gap-3">
               <a href="#signup" className="btn btn-primary h-11 px-6">Join Waitlist</a>
               <a href="#features" className="btn btn-outline h-11 px-6">Learn more</a>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <div className="relative rounded-2xl border border-[hsl(var(--border))] bg-white/50 dark:bg-white/5 backdrop-blur-sm aspect-video shadow-sm overflow-hidden">
-              <div className="absolute inset-0 bg-accent-gradient opacity-10" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-sm text-[hsl(var(--muted-fg))]">
-                Minimal UI designed for speed and signal.
-              </div>
-            </div>
-          </motion.div>
+          <AnimatedPillsSection />
         </div>
       </section>
 
       {/* Features */}
       <section id="features" className="container-px mx-auto max-w-6xl py-14 sm:py-20">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-semibold">What you get</h2>
-          <p className="mt-3 text-[hsl(var(--muted-fg))]">Essentials only. Crafted for focused launches and clear storytelling.</p>
+          <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-[hsl(var(--muted))]/40 text-[hsl(var(--muted-fg))]">
+            Built for runners
+          </div>
+          <h2 className="mt-3 text-2xl sm:text-3xl font-semibold">Why PacePop</h2>
+          <p className="mt-3 text-[hsl(var(--muted-fg))]">
+            Clean, dissolving fuel that melts in your mouth. No sticky gels - just smart energy you can actually enjoy.
+          </p>
         </div>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <FeatureCard icon={<GaugeCircle className="h-5 w-5" />} title="Fast setup" description="Go from idea to live page in minutes, not hours." />
-          <FeatureCard icon={<Layout className="h-5 w-5" />} title="Clean design" description="Whitespace, thoughtful typography, and accessible defaults." />
-          <FeatureCard icon={<Bolt className="h-5 w-5" />} title="Built-in waitlist" description="Collect emails securely with duplicate detection." />
-          <FeatureCard icon={<Shield className="h-5 w-5" />} title="Privacy-first" description="We only use your email to send product updates." />
+
+        {/* Equal-height grid + proper Icon prop */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-fr">
+          <div className="h-full">
+            <FeatureCard
+              icon={<Zap className="h-5 w-5" />}
+              title="Clean Fuel, No Gels"
+              description="Dissolves in under 60s for quick energy without the mess or gut bombs."
+            />
+          </div>
+          <div className="h-full">
+            <FeatureCard
+              icon={<Droplet className="h-5 w-5" />}
+              title="Smart Energy Dosing"
+              description="Each tablet = 5g carbs + electrolytes. Take 1–2 every 10–15 min to hit your plan."
+            />
+          </div>
+          <div className="h-full">
+            <FeatureCard
+              icon={<Candy className="h-5 w-5" />}
+              title="Flavors You’ll Like"
+              description="Citrus Blast, Cola Rush, Green Apple, Salted Lime—fuel that actually tastes good."
+            />
+          </div>
+          <div className="h-full">
+            <FeatureCard
+              icon={<Leaf className="h-5 w-5" />}
+              title="Pocket-Friendly"
+              description="Slim blister strips slip into any pocket—perfect for 5Ks to long trail days."
+            />
+          </div>
+        </div>
+
+        {/* Mini highlights: centered, consistent pills */}
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-[hsl(var(--muted-fg))]">
+          <div className="rounded-xl border border-[hsl(var(--border))] p-3 text-center">5g carbs / tab</div>
+          <div className="rounded-xl border border-[hsl(var(--border))] p-3 text-center">Electrolytes included</div>
+          <div className="rounded-xl border border-[hsl(var(--border))] p-3 text-center">Dissolves &lt; 60s</div>
+          <div className="rounded-xl border border-[hsl(var(--border))] p-3 text-center">Made in the EU</div>
         </div>
       </section>
 
+
       {/* Pricing (coming soon) */}
-      <section id="pricing" className="container-px mx-auto max-w-5xl py-12 sm:py-16">
+      {/* <section id="pricing" className="container-px mx-auto max-w-5xl py-12 sm:py-16">
         <div className="card p-6 sm:p-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold">Pricing</h2>
           <p className="mt-3 text-[hsl(var(--muted-fg))]">Coming soon. Early adopters from the waitlist get special access.</p>
@@ -61,7 +97,7 @@ export default function Page() {
             <a href="#signup" className="btn btn-primary h-11 px-6">Join Waitlist</a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
       <FAQ />
