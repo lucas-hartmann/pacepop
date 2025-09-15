@@ -6,7 +6,7 @@ export default function PrivacyPage() {
         We respect your privacy. We only collect the email address you choose to submit for the waitlist and use it solely to send product updates. You can opt out at any time by following the unsubscribe instructions in our messages.
       </p>
       <p className="mt-4 text-[hsl(var(--muted-fg))]">
-        If you have questions about your data, contact us at hello@pacepop.run.
+        If you have questions about your data, contact us at pacepop.run@gmail.com.
       </p>
     </main>
   )

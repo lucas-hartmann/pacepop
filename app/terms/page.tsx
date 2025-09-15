@@ -6,7 +6,7 @@ export default function TermsPage() {
         By using PacePop, you agree to use the service lawfully and responsibly. The waitlist is provided as-is without warranties. We may update these terms periodically.
       </p>
       <p className="mt-4 text-[hsl(var(--muted-fg))]">
-        For questions, contact us at hello@pacepop.run.
+        For questions, contact us at pacepop.run@gmail.com.
       </p>
     </main>
   )
