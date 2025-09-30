@@ -21,6 +21,7 @@ export function Navbar() {
         </div>
         </Link>
         <nav className="flex items-center gap-2">
+          <Link href="#pacecalc" className="btn btn-outline btn-secondary h-9 px-4 text-sm">Pace Calculator</Link>
           <Link href="#signup" className="btn btn-primary h-9 px-4 text-sm">
             Join Waitlist
           </Link>

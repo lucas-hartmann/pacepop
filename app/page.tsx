@@ -9,6 +9,7 @@ import { Zap, Droplet, Candy, Leaf } from "lucide-react";
 
 import Link from 'next/link'
 import AnimatedPillsSection from '@/components/AnimatedPillSection'
+import PaceCalculator from '@/components/PaceCalculator'
 
 export default function Page() {
   return (
@@ -112,6 +113,12 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Pace Calculator */}
+      <section id="pacecalc" className="container-px mx-auto py-12 sm:py-16">
+            <PaceCalculator />
+      </section>
+
 
       {/* Footer */}
       <footer className="mt-14 border-t border-[hsl(var(--border))] py-6">
